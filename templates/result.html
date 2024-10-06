@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+  </head>
+  <body>
+    <h2>Output Text:</h2>
+    <p>{{ output_text }}</p>
+    
+    <h2>Output Audio:</h2>
+    <audio controls>
+        <source src="data:{{ audio_data | safe }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+  </body>
+</html>

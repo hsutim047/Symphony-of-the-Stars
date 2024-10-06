@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Upload</title>
+  </head>
+  <body>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <input type="submit" value="Upload">
+    </form>
+    {% if output_text %}
+    <h2>Output Text:</h2>
+    <p>{{ output_text }}</p>
+    {% endif %}
+    
+    {% if audio_data %}
+    <h2>Output Audio:</h2>
+    <audio controls>
+        <source src="data:audio/mp3;base64,{{ audio_data | safe }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+  </body>
+</html>
